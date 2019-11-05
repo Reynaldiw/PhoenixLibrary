@@ -1,0 +1,2 @@
+include ':app', ':phoenix'
+rootProject.name='PhoenixLibrary'
