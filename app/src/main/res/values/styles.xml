@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextStyleDefault">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextTitleBig" parent="TextStyleDefault">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:fontFamily">@font/comfortaa_regular</item>
+        <item name="android:color">@android:color/black</item>
+    </style>
+
+    <style name="TabLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">false</item>
+        <item name="tabMode">fixed</item>
+        <item name="android:actionBarTabTextStyle">@style/TextTitleBig</item>
+        <item name="tabIndicatorHeight">@dimen/dimen_3dp</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextColor">@android:color/black</item>
+    </style>
+
 </resources>

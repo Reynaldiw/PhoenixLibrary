@@ -11,12 +11,11 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import java.lang.NullPointerException
 
 abstract class BaseActivity : AppCompatActivity(), BaseView, BaseFragment.Callback {
 
     // Pass your layout here
-    protected abstract val layoutResource : Int
+    protected abstract val layoutResource: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,10 +73,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseView, BaseFragment.Callba
     override fun hideKeyboard() {
         val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
-        var iBinder : IBinder? = null
+        var iBinder: IBinder? = null
         try {
             iBinder = currentFocus?.windowToken
-        }catch (e : NullPointerException) {
+        } catch (e: NullPointerException) {
             e.printStackTrace()
         }
 
@@ -97,7 +96,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView, BaseFragment.Callba
 
     }
 
-    fun setFragment(viewRes : Int, fragment : Fragment, addToBackStack : Boolean) {
+    fun setFragment(viewRes: Int, fragment: Fragment, addToBackStack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
 
         // Replace whatever is in the fragment_container view with this fragment,

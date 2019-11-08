@@ -4,13 +4,19 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.google.gson.Gson
-import java.lang.Exception
 
-class PreferenceManagaerImpl(private val context: Context,
-                             private val prefName : String,
-                             private val gson : Gson) : PreferenceManager {
+class PreferenceManagerImpl(
+    private val context: Context,
+    private val prefName: String,
+    private val gson: Gson
+) : PreferenceManager {
 
-    private val mPreferences : SharedPreferences by lazy { context.getSharedPreferences(prefName, Context.MODE_PRIVATE) }
+    private val mPreferences: SharedPreferences by lazy {
+        context.getSharedPreferences(
+            prefName,
+            Context.MODE_PRIVATE
+        )
+    }
 
     override fun getBoolean(key: String, default: Boolean): Boolean {
         return mPreferences.getBoolean(key, default)
@@ -58,7 +64,7 @@ class PreferenceManagaerImpl(private val context: Context,
         return if (json.isNotEmpty()) {
             try {
                 gson.fromJson(json, type)
-            }catch (e : Exception) {
+            } catch (e: Exception) {
                 null
             }
         } else

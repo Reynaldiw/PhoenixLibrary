@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    fun <S> createService(serviceClass : Class<S>, okHttpClient: OkHttpClient, baseURL : String) : S {
+    fun <S> createService(serviceClass: Class<S>, okHttpClient: OkHttpClient, baseURL: String): S {
 
         val gson = GsonBuilder()
             .create()
@@ -22,7 +22,11 @@ object ApiService {
         return retrofit.create(serviceClass)
     }
 
-    fun <S> createReactiveService(serviceClass: Class<S>, okHttpClient: OkHttpClient, baseURL: String) : S {
+    fun <S> createReactiveService(
+        serviceClass: Class<S>,
+        okHttpClient: OkHttpClient,
+        baseURL: String
+    ): S {
 
         val gson = GsonBuilder()
             .create()
