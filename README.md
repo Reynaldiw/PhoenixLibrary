@@ -3,3 +3,4 @@ This library, help people for creating Recyclerview and ViewPager Adapter. And a
 
 ** Required : Androidx
 
+![How to use it](https://user-images.githubusercontent.com/43948846/68446737-34fdc500-0210-11ea-804e-460737c7101d.png)
